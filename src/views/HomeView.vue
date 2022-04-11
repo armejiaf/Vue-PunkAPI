@@ -3,8 +3,13 @@
 
     <div class="splash-container">
       <div class="splash">
-        <h1>Splendid Food</h1>
+        <h1>BREWDOG'S CRAFT BEER</h1>
       </div>
+    </div>
+    <br/>
+    <div class="search-container">
+        <input type="text" placeholder="Search by beer name.." v-bind="searchInformation" name="search">
+        <button @click="searchByBeerName(searchInformation)" ><i class="fa fa-search"></i></button>
     </div>
 
     <main class="wrapper">
@@ -12,13 +17,6 @@
       <h2>Recommended</h2>
 
       <div class="recommended">
-
-        <ProductCard
-          v-for="product in inventory.slice(0,3)"
-          :key="product.id"
-          :product="product"
-          :addToCart="addToCart"
-        />
 
       </div>
 
@@ -28,13 +26,14 @@
 </template>
 
 <script>
-import ProductCard from '@/components/ProductCardComponent.vue'
 
 export default {
   name: 'HomeView',
-  props: ['inventory', 'addToCart'],
-  components: {
-    ProductCard
+  props: ['searchByBeerName', 'beers'],
+  data () {
+    return {
+      searchInformation: ''
+    }
   }
 }
 </script>

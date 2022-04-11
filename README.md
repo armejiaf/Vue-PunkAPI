@@ -4,7 +4,9 @@ Base template used is from following Gwen Faraday's Vue.js Course for Beginners 
 
 ## Prerequisite
 Vue CLI 5.0.4
+
 node version v14.19.0 
+
 npm version 6.14.16
 
 ## Project setup
