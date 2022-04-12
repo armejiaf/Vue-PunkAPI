@@ -8,24 +8,15 @@
     @searchInformationChanged="searchInformation = $event"
   />
 
-  <Sidebar
-    v-if="showSidebar"
-    :toggle="toggleSidebar"
-    :cart="cart"
-    :inventory="inventory"
-    :remove="removeItem"
-  />
 </template>
 
 <script>
-import Sidebar from '@/components/SidebarComponent.vue'
 import food from '@/food.json'
 import PunkAPIWrapper from 'punkapi-javascript-wrapper'
 import VueBasicAlert from 'vue-basic-alert'
 
 export default {
   components: {
-    Sidebar,
     VueBasicAlert
   },
   data () {
@@ -50,7 +41,6 @@ export default {
       const result = punkApi.getBeers({ beer_name: this.searchInformation })
       result.then(beers => {
         if (beers.length > 0) {
-          console.log(beers)
           this.beers = beers
           this.searchInformation = ''
           this.$refs.alert.showAlert('success', 'Some beers were found.', 'Success', { iconSize: 35, iconType: 'solid', position: 'top right' })

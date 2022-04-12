@@ -1,54 +1,30 @@
 <template>
-    <div class="card">
-          <div class="card-title">
-            {{product.name}}
-          </div>
-          <div class="card-body">
-            <i :class="productIconClass(product.icon)"></i>
-            <form>
-              <div class="row">
-                <div class="cell">
-                  <label>Type:</label>
-                </div>
-                <div class="cell">
-                  <em>{{product.type}}</em>
-                </div>
-              </div>
-              <div class="row">
-                <div class="cell">
-                  <label>Price:</label>
-                </div>
-                <div class="cell">
-                  ${{product.price.USD.toFixed(2)}}
-                </div>
-              </div>
-              <div class="row">
-                <div class="cell">
-                  <label>Quantity:</label>
-                </div>
-                <div class="cell">
-                  <input type="number" v-model.number="quantity">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="card-footer">
-            <button @click="addToCart(product.name, quantity)" class="btn btn-light">Add to cart</button>
-          </div>
+  <div class="card">
+    <div class="card-title">
+       <button @click="showCardDetails()" class="btn btn-light"><i class="fa fa-info-circle"></i></button>
+    </div>
+    <div class="card-body">
+      <img :src="beer.image_url">
+      <p>{{beer.name}}</p>
+      <p><em>{{beer.tagline}}</em></p>
+      <div class="row">
+        <div class="cell">
+          <label>ABV:</label>
         </div>
+        <div class="cell">
+          {{beer.abv}}%
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['product', 'addToCart'],
-  data () {
-    return {
-      quantity: 0
-    }
-  },
+  props: ['beer'],
   methods: {
-    productIconClass (productIcon) {
-      return 'icofont-10x icofont-' + productIcon
+    showCardDetails () {
+      console.log('TODO show details')
     }
   }
 }

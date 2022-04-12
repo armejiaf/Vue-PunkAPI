@@ -12,7 +12,7 @@
     background: $cardBackground
     margin-bottom: 20px
     color: $cardTextColor
-    &:hover i
+    &:hover img
         opacity: 1.0
 
 .card-title
@@ -20,17 +20,20 @@
     width: 100%
     background: $cardHeaderBackground
     padding: 10px
-    font-size: 22px
+    font-size: 15px
+    color: #FFFFFF
 
 .card-body
     border: 1px solid $cardBorder
     border-top: 0px
     border-bottom: 0px
     text-align: center
-    i
-        display: block
+    img
+        float: center
         color: var(--bodyTextColor)
         opacity: 0.8
+        max-width: 15rem
+        max-height: 15rem
     label
         display: inline-block
         font-weight: bold
@@ -40,6 +43,8 @@
         width: 100px
         border: 1px solid $cardBorder
         padding: 4px
+    p
+        float: center
     .cell
         align-items: center
         width: 50%
