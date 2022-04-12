@@ -8,7 +8,7 @@
     </div>
     <br/>
     <div class="search-container">
-        <input type="text" placeholder="Search by beer name.." :value="searchInformation" @input="updateSearchInformation" name="search">
+        <input @keypress.enter="searchByBeerName(searchInformation)" type="text" placeholder="Search by beer name.." :value="searchInformation" @input="updateSearchInformation" name="search">
         <button @click="searchByBeerName(searchInformation)" ><i class="fa fa-search"></i></button>
     </div>
     <br/>
