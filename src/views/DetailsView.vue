@@ -4,7 +4,8 @@
       <h1>No data to show</h1>
       <br/>
     </div>
-    <div v-if="beers.length > 0" id="parent">
+    <div v-if="beers.length > 0 && $route.params.id >=0" id="parent">
+      <button @click="returnToHome()" class="btn btn-light btn-text-large"><i class="fa fa-arrow-left"></i> Go back</button>
       <h1>Beer Details</h1>
       <div>
         <div class="child">
@@ -80,7 +81,7 @@ export default {
     },
     mashTempInformation () {
       return this.beers[this.$route.params.id].method.mash_temp.map((mMashTemp) => {
-        return { Temperature: mMashTemp.temp.value + ' ' + mMashTemp.temp.unit, Duration: mMashTemp.duration }
+        return { Temperature: mMashTemp.temp.value + ' ' + mMashTemp.temp.unit, Duration: mMashTemp.duration + ' minutes' }
       })
     },
     fermentationInformation () {
@@ -90,7 +91,7 @@ export default {
   },
   methods: {
     returnToHome (event) {
-      this.$router.push('/')
+      history.back()
     }
   },
   components: {

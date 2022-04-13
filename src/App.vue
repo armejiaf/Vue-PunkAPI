@@ -7,6 +7,7 @@
   </div>
   <router-view
     :searchByBeerName="searchByBeerName"
+    :clearBeers="clearBeers"
     :beers="beers"
     :searchInformation="searchInformation"
     @searchInformationChanged="searchInformation = $event"
@@ -50,6 +51,9 @@ export default {
       } else {
         this.$refs.alert.showAlert('warning', 'Please write a beer name.', 'Empty', { iconSize: 35, iconType: 'solid', position: 'top right' })
       }
+    },
+    clearBeers () {
+      this.beers = {}
     }
   }
 }

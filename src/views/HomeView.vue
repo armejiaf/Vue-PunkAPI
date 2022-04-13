@@ -7,6 +7,11 @@
     </div>
     <br/>
     <br/>
+    <br/>
+    <div v-if="beers.length > 0" class="btn-container">
+      <button @click="clearBeers" class="clear-btn"><i class="fa fa-trash"></i> Clear Results</button>
+    </div>
+    <br/>
     <main class="wrapper">
       <div class="card-container">
         <BeerCard
@@ -25,7 +30,7 @@ import BeerCard from '@/components/BeerCardComponent.vue'
 
 export default {
   name: 'HomeView',
-  props: ['searchByBeerName', 'beers', 'searchInformation'],
+  props: ['searchByBeerName', 'beers', 'searchInformation', 'clearBeers'],
   methods: {
     updateSearchInformation (event) {
       this.$emit('searchInformationChanged', event.target.value)

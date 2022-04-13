@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-title">
-       <button @click="showCardDetails()" class="btn btn-light"><i class="fa fa-info-circle"></i></button>
+       <button @click="showCardDetails()" class="btn btn-light"><i class="fa fa-info-circle"></i> Details</button>
     </div>
     <div class="card-body">
       <img  @click="showCardDetails()" :src="beer.image_url?beer.image_url: defaultBeerImage">
