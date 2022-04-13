@@ -4,7 +4,7 @@
        <button @click="showCardDetails()" class="btn btn-light"><i class="fa fa-info-circle"></i></button>
     </div>
     <div class="card-body">
-      <img :src="beer.image_url?beer.image_url: defaultBeerImage">
+      <img  @click="showCardDetails()" :src="beer.image_url?beer.image_url: defaultBeerImage">
       <p>{{beer.name}}</p>
       <p><em>{{beer.tagline}}</em></p>
       <div class="row">
@@ -28,10 +28,10 @@ export default {
       defaultBeerImage: beerImage
     }
   },
-  props: ['beer'],
+  props: ['beer', 'index'],
   methods: {
     showCardDetails () {
-      console.log('TODO show details')
+      this.$router.push({ name: 'beer-detail', params: { id: this.$props.index } })
     }
   }
 }

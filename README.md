@@ -9,6 +9,11 @@ node version v14.19.0
 
 npm version 6.14.16
 
+## Vue CLI
+```
+npm install -g @vue/cli
+```
+
 ## Project setup
 ```
 npm install
