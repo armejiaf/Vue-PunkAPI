@@ -1,10 +1,6 @@
 <template>
   <vue-basic-alert :duration="300"  :closeIn="10000" ref="alert" />
-  <div class="splash-container">
-    <div class="splash">
-      <h1>BREWDOG'S CRAFT BEER</h1>
-    </div>
-  </div>
+
   <router-view
     :searchByBeerName="searchByBeerName"
     :clearBeers="clearBeers"

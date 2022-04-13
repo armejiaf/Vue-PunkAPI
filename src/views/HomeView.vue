@@ -1,5 +1,10 @@
 <template>
   <div class="home">
+    <div class="splash-container">
+      <div class="splash">
+        <h1>BREWDOG'S CRAFT BEER</h1>
+      </div>
+    </div>
     <br/>
     <div class="search-container">
         <input @keypress.enter="searchByBeerName(searchInformation)" type="text" placeholder="Search by beer name.." :value="searchInformation" @input="updateSearchInformation" name="search">
