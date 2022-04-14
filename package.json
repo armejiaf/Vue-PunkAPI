@@ -12,6 +12,7 @@
     "punkapi-javascript-wrapper": "^1.0.2",
     "vue": "^3.2.13",
     "vue-basic-alert": "^1.1.0",
+    "vue-loading-overlay": "^5.0.3",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {

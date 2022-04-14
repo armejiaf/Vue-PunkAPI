@@ -1,6 +1,9 @@
 <template>
   <vue-basic-alert :duration="300"  :closeIn="10000" ref="alert" />
-
+  <loading v-model:active="isLoading"
+    :is-full-page="fullPage"
+    :loader="loader"
+  />
   <router-view
     :searchByBeerName="searchByBeerName"
     :clearBeers="clearBeers"
@@ -14,19 +17,26 @@
 <script>
 import PunkAPIWrapper from 'punkapi-javascript-wrapper'
 import VueBasicAlert from 'vue-basic-alert'
+import Loading from 'vue-loading-overlay'
 
 export default {
   components: {
-    VueBasicAlert
+    VueBasicAlert,
+    Loading
   },
   data () {
     return {
       beers: {},
-      searchInformation: ''
+      searchInformation: '',
+      isLoading: false,
+      fullPage: true,
+      loader: 'dots'
     }
   },
   methods: {
     searchByBeerName () {
+      this.isLoading = true
+      setTimeout(() => { this.isLoading = false }, 1000)
       if (this.searchInformation) {
         const punkApi = new PunkAPIWrapper()
         const result = punkApi.getBeers({ beer_name: this.searchInformation })
