@@ -6,7 +6,12 @@
 .card-container
     flex-wrap: wrap
 
+.cell
+    display: inline-flex
+
 .card
+    cursor: pointer
+    border: 1px solid $cardBorder
     display: inline-block
     width: 300px
     background: $cardBackground
@@ -24,7 +29,6 @@
     color: #FFFFFF
 
 .card-body
-    border: 1px solid $cardBorder
     border-top: 0px
     border-bottom: 0px
     text-align: center

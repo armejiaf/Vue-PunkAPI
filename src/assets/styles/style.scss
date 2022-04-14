@@ -1,3 +1,8 @@
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+@import 'vue-loading-overlay/dist/vue-loading.css';
+@import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css';
+
 /* ITCSS: Settings */
 @import '_root';
 @import '_var.sass';
@@ -25,6 +30,3 @@
 
 /* ITCSS: Trumps */
 @import '_mediaqueries.sass';
-
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
-@import 'vue-loading-overlay/dist/vue-loading.css';

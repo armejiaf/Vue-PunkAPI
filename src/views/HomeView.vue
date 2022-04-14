@@ -22,7 +22,8 @@
           :index="index"
         />
       </div>
-      <div class="no-result">
+      <div v-if="notFound" class="not-found">
+        <p>We're sorry. We couldn't find any beers for "{{searchInformationCopy}}"...</p>
       </div>
     </main>
   </div>
@@ -39,7 +40,7 @@ export default {
       logo: logoImage
     }
   },
-  props: ['searchByBeerName', 'beers', 'searchInformation', 'clearBeers'],
+  props: ['searchByBeerName', 'beers', 'searchInformation', 'clearBeers', 'notFound', 'searchInformationCopy'],
   methods: {
     updateSearchInformation (event) {
       this.$emit('searchInformationChanged', event.target.value)

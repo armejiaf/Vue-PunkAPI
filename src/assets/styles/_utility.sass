@@ -15,6 +15,7 @@
     font-size: 20px
 
 .btn-dark
+    cursor: pointer
     width: 100%
     background: $topNavBackground
     color: $topNavColor
@@ -24,21 +25,13 @@
         color: $bodyBackground
 
 .btn-light
+    cursor: pointer
     width: 100%
     background: $topNavColor
     color: $topNavBackground
     &:hover
         background: #DCDCDC
         color: $cartBackground
-
-.center
-    text-align: center
-
-.row
-    display: flex
-
-.cell
-    display: inline-flex
 
 table
     margin-left: auto
@@ -76,4 +69,22 @@ table
     .clear-btn:hover 
         background: #b20000
 
-    
+.row
+    text-align: center
+    p
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+    img
+        color: var(--bodyTextColor)
+        opacity: 0.8
+        max-width: 15rem
+        max-height: 15rem
+    .cell
+        align-items: center
+        width: 50%
+        min-height: 2em
+        padding: 3px 4px
+        &:first-of-type
+            justify-content: end
+        
