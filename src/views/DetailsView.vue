@@ -9,20 +9,10 @@
         <img :src="beerImage?beerImage: defaultBeerImage">
       </div>
       <div class="row">
-        <div class="cell">
-          <label><strong>Name:</strong></label>
-        </div>
-        <div class="cell">
-          <p> {{beers[$route.params.id].name}}</p>
-        </div>
+        <p> {{beers[$route.params.id].name}}</p>
       </div>
       <div class="row">
-        <div class="cell">
-          <label><strong>First Brewed:</strong></label>
-        </div>
-        <div class="cell">
-          <p> {{beers[$route.params.id].first_brewed}}</p>
-        </div>
+        <p> <strong>First Brewed: </strong>{{beers[$route.params.id].first_brewed}}</p>
       </div>
       <p>{{beers[$route.params.id].description}}</p>
       <vue-collapsible-panel-group :style="collapsiblePanelCss">
